@@ -1,0 +1,98 @@
+{
+  "job_id": "job_005_mobile_engineer",
+  "version": "1.0",
+  "created_at": "2026-10-11T09:00:00Z",
+  "updated_at": "2026-10-11T09:00:00Z",
+  "questions": [
+    {
+      "id": "q_005_001",
+      "text": "How do you structure a mobile app so that new features can be added without breaking existing screens?",
+      "skill_area": ["technical_skills", "domain_understanding"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "Which architecture pattern did you use, and how did it help in practice?" },
+        { "trigger": "incomplete", "text": "How do you keep shared components from becoming tangled?" }
+      ],
+      "scoring_rubric": {
+        "1": "No structure described",
+        "2": "Names a pattern without explaining how it applies",
+        "3": "Separates UI, state and data layers with reasons",
+        "4": "Explains module boundaries, testing and shared components clearly",
+        "5": "Discusses trade-offs, migration from an older design and team conventions"
+      }
+    },
+    {
+      "id": "q_005_002",
+      "text": "Tell me about a performance problem you found in a mobile app. How did you measure it and fix it?",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "What tool did you use to profile it, and what did the numbers show?" },
+        { "trigger": "incomplete", "text": "How did you check that the fix did not cause a regression?" }
+      ],
+      "scoring_rubric": {
+        "1": "No performance work described",
+        "2": "Describes a fix without measurement",
+        "3": "Uses a profiler and measures before and after",
+        "4": "Explains the root cause and checks for regressions",
+        "5": "Also covers monitoring in production and lessons for the team"
+      }
+    },
+    {
+      "id": "q_005_003",
+      "text": "How do you handle an API that changes while a mobile app is already in users' hands?",
+      "skill_area": ["technical_skills", "communication"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "How do you coordinate that change with the backend team?" },
+        { "trigger": "incomplete", "text": "What happens to users who have not updated the app?" }
+      ],
+      "scoring_rubric": {
+        "1": "Does not consider older app versions",
+        "2": "Mentions versioning without a plan",
+        "3": "Uses backward-compatible changes and version checks",
+        "4": "Plans a rollout with deprecation windows and monitoring",
+        "5": "Explains contract testing, staged releases and clear communication with both teams"
+      }
+    },
+    {
+      "id": "q_005_004",
+      "text": "Describe how you test a feature in a mobile app. Which tests do you write, and which do you leave to manual testing?",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "Can you give an example of a test that caught a real bug?" },
+        { "trigger": "incomplete", "text": "How do you keep UI tests from becoming slow or flaky?" }
+      ],
+      "scoring_rubric": {
+        "1": "No testing approach described",
+        "2": "Only manual testing or only unit tests, without reasons",
+        "3": "Combines unit and UI tests with a sensible split",
+        "4": "Explains the test pyramid choices and handles flakiness",
+        "5": "Also covers device coverage, release testing and metrics on test health"
+      }
+    },
+    {
+      "id": "q_005_005",
+      "text": "A feature needs to work when the device is offline. How would you design the data storage and sync?",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "Where would the data be stored on the device, and why there?" },
+        { "trigger": "incomplete", "text": "What happens when two edits conflict after reconnecting?" }
+      ],
+      "scoring_rubric": {
+        "1": "Does not consider offline use",
+        "2": "Stores data locally without a sync plan",
+        "3": "Describes local storage and a simple sync with retries",
+        "4": "Handles conflicts and partial failures explicitly",
+        "5": "Explains the design trade-offs, data limits and how it is tested offline"
+      }
+    }
+  ]
+}

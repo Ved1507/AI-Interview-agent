@@ -1,0 +1,98 @@
+{
+  "job_id": "job_006_qa_automation_engineer",
+  "version": "1.0",
+  "created_at": "2026-10-11T09:00:00Z",
+  "updated_at": "2026-10-11T09:00:00Z",
+  "questions": [
+    {
+      "id": "q_006_001",
+      "text": "How do you decide what to automate and what to leave for manual testing?",
+      "skill_area": ["problem_solving", "domain_understanding"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "Can you give an example of a test you chose not to automate, and why?" },
+        { "trigger": "incomplete", "text": "How do you judge the value of an automated test over time?" }
+      ],
+      "scoring_rubric": {
+        "1": "No criteria for automation",
+        "2": "Automates everything or nothing, without reasons",
+        "3": "Weighs frequency, risk and cost of each test",
+        "4": "Applies a clear test strategy across unit, API and UI levels",
+        "5": "Also reviews test value over time and retires weak tests"
+      }
+    },
+    {
+      "id": "q_006_002",
+      "text": "Tell me about a flaky test you dealt with. How did you find the cause and make the test reliable?",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "What did you change in the test or in the application?" },
+        { "trigger": "incomplete", "text": "How did you stop the flakiness from coming back?" }
+      ],
+      "scoring_rubric": {
+        "1": "Cannot describe flaky tests",
+        "2": "Retries the test without finding the cause",
+        "3": "Finds a timing or data cause and fixes it",
+        "4": "Improves waiting, isolation and test data, and checks the fix",
+        "5": "Adds monitoring for flakiness and shares the fix as a team practice"
+      }
+    },
+    {
+      "id": "q_006_003",
+      "text": "How do you design API tests so they stay useful when the API changes?",
+      "skill_area": ["technical_skills", "domain_understanding"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "What do you assert on: status codes, schemas, business rules, or all three?" },
+        { "trigger": "incomplete", "text": "How do you test error responses, not only successful ones?" }
+      ],
+      "scoring_rubric": {
+        "1": "No API testing approach",
+        "2": "Checks only status codes",
+        "3": "Asserts responses and key business rules",
+        "4": "Uses schema checks, test data control and error cases",
+        "5": "Also uses contract tests to catch breaking changes early"
+      }
+    },
+    {
+      "id": "q_006_004",
+      "text": "A release is due tomorrow and a critical bug was found in exploratory testing. Walk me through what you would do.",
+      "skill_area": ["problem_solving", "communication"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "How would you decide whether the release should be delayed?" },
+        { "trigger": "incomplete", "text": "Who would you tell, and what would you tell them?" }
+      ],
+      "scoring_rubric": {
+        "1": "No clear response",
+        "2": "Reports the bug without assessing impact",
+        "3": "Assesses severity, reproduces the bug and informs the team",
+        "4": "Gives a clear go or no-go recommendation with risks",
+        "5": "Also proposes a targeted regression check and a follow-up to prevent recurrence"
+      }
+    },
+    {
+      "id": "q_006_005",
+      "text": "How do you keep test runs fast enough for developers to rely on them in every pull request?",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "Which tests run on every pull request, and which run later?" },
+        { "trigger": "incomplete", "text": "How do you run tests in parallel without sharing state?" }
+      ],
+      "scoring_rubric": {
+        "1": "No view on test speed",
+        "2": "Suggests running fewer tests without a plan",
+        "3": "Splits fast and slow suites and runs them in CI",
+        "4": "Uses parallelism, isolation and test data strategy",
+        "5": "Measures run times, sets budgets and continuously optimises the pipeline"
+      }
+    }
+  ]
+}

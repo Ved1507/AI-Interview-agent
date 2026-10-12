@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Your interview</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" id="monogram" aria-hidden="true">TI</span>
+      <div>
+        <h1 id="job-title">Your interview</h1>
+        <p class="client-line" id="client-line">Please complete the steps below in one sitting.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="banner" id="banner" hidden>
+    <span id="banner-text"></span>
+  </div>
+
+  <main>
+    <section id="view-loading" class="view">
+      <div class="card narrow center">
+        <p class="subtle">Loading…</p>
+      </div>
+    </section>
+
+    <section id="view-message" class="view" hidden>
+      <div class="card narrow center">
+        <h2 id="msg-title"></h2>
+        <p class="subtle" id="msg-text"></p>
+      </div>
+    </section>
+
+    <section id="view-consent" class="view" hidden>
+      <div class="card narrow">
+        <h2>Before you start</h2>
+        <p class="welcome" id="welcome" hidden></p>
+        <p class="subtle">Please read and agree to each statement. You cannot continue without all three.</p>
+        <label class="check">
+          <input type="checkbox" id="c-ai-notice" />
+          <span>I understand an AI agent runs this interview, and a person makes the final decision.</span>
+        </label>
+        <label class="check">
+          <input type="checkbox" id="c-ai-processing" />
+          <span>I understand my CV and my answers will be sent to OpenAI, an external AI service, to be scored and summarized.</span>
+        </label>
+        <label class="check">
+          <input type="checkbox" id="c-data" />
+          <span>I agree to my interview data being stored and kept for 30 days after the decision.</span>
+        </label>
+        <p class="error" id="consent-error" role="alert" hidden></p>
+        <div class="actions">
+          <button class="btn primary" id="consent-btn">Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-cv" class="view" hidden>
+      <div class="card narrow">
+        <h2>Your CV</h2>
+        <p class="subtle" id="cv-note"></p>
+        <label class="field">
+          <span>Upload a PDF or DOCX (max 5 MB)</span>
+          <input type="file" id="cv-file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+        </label>
+        <label class="field">
+          <span>Or paste the text</span>
+          <textarea id="cv-text" rows="6" maxlength="50000"></textarea>
+        </label>
+        <p class="error" id="cv-error" role="alert" hidden></p>
+        <div class="actions">
+          <button class="btn ghost" id="cv-skip-btn">Skip</button>
+          <button class="btn primary" id="cv-btn">Save CV and continue</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-start" class="view" hidden>
+      <div class="card narrow center">
+        <h2>Ready?</h2>
+        <p class="subtle" id="start-note"></p>
+        <p class="error" id="start-error" role="alert" hidden></p>
+        <div class="actions center-actions">
+          <button class="btn primary" id="start-btn">Start interview</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-preparing" class="view" hidden>
+      <div class="card narrow center">
+        <h2>Preparing your questions</h2>
+        <p class="subtle">This takes a few seconds.</p>
+      </div>
+    </section>
+
+    <section id="view-interview" class="view" hidden>
+      <div class="card question-card">
+        <div class="question-meta">
+          <span class="pill" id="q-number"></span>
+          <span class="pill muted" id="q-kind"></span>
+        </div>
+        <p class="question-text" id="q-text"></p>
+        <label class="field">
+          <span>Your answer</span>
+          <textarea id="answer" rows="8" maxlength="10000"></textarea>
+        </label>
+        <div class="char-count"><span id="answer-count">0</span> / 10000</div>
+        <p class="error" id="answer-error" role="alert" hidden></p>
+        <div class="actions">
+          <button class="btn primary" id="answer-btn">Submit answer and continue</button>
+        </div>
+      </div>
+      <div class="card narrow center" id="finish-card" hidden>
+        <h2>All questions answered</h2>
+        <p class="subtle">When you are ready, submit your interview. You will not be able to change your answers afterwards.</p>
+        <p class="error" id="finish-error" role="alert" hidden></p>
+        <div class="actions center-actions">
+          <button class="btn primary" id="finish-btn">Submit interview</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-done" class="view" hidden>
+      <div class="card narrow center">
+        <h2>Thank you</h2>
+        <p class="subtle">Your interview has been submitted. You can close this page.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/candidate.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interview Admin</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">TI</span>
+      <div>
+        <h1>Interview Admin</h1>
+        <p class="subtle">Create interview links, review results, generate reports</p>
+        <p class="client-line" id="client-line" hidden></p>
+      </div>
+    </div>
+    <nav>
+      <button class="btn ghost" id="nav-list">Interviews</button>
+      <button class="btn ghost" id="nav-new">New interview</button>
+      <button class="btn ghost" id="nav-queue">Review queue</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Interviews list -->
+    <section id="view-list" class="view">
+      <div class="card">
+        <div class="queue-head">
+          <div>
+            <h2>Interviews</h2>
+            <p class="subtle">Links expire 30 minutes after they are created. Once a candidate joins, the link cannot be replaced.</p>
+          </div>
+          <button class="btn ghost" id="list-refresh">Refresh</button>
+        </div>
+        <p class="error" id="list-error" role="alert" hidden></p>
+        <div id="list-items" class="queue-list"></div>
+        <p class="subtle" id="list-empty" hidden>No interviews yet. Create one with "New interview".</p>
+      </div>
+    </section>
+
+    <!-- New interview -->
+    <section id="view-setup" class="view" hidden>
+      <div class="card">
+        <h2>New interview</h2>
+        <form id="setup-form" novalidate>
+          <div class="grid two">
+            <label class="field">
+              <span>Candidate ID or name</span>
+              <input id="candidate-id" required maxlength="100" placeholder="e.g. cand-2026-0042" />
+            </label>
+            <label class="field">
+              <span>Job</span>
+              <select id="job-select" required>
+                <option value="">Loading jobs…</option>
+              </select>
+            </label>
+          </div>
+
+          <fieldset class="field">
+            <legend>Interview mode</legend>
+            <div class="modes">
+              <label class="mode-option">
+                <input type="radio" name="mode" value="A" checked />
+                <strong>Mode A · Standardized</strong>
+                <small>Same question-bank questions for every candidate.</small>
+              </label>
+              <label class="mode-option">
+                <input type="radio" name="mode" value="B" />
+                <strong>Mode B · Hybrid</strong>
+                <small>Question bank plus CV-specific probes and follow-ups.</small>
+              </label>
+              <label class="mode-option">
+                <input type="radio" name="mode" value="C" />
+                <strong>Mode C · CV-driven</strong>
+                <small>Questions generated from the CV and the job. CV required.</small>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <span>Candidate CV <small class="subtle">(optional; the candidate can upload it on the link)</small></span>
+            <input type="file" id="cv-file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+            <textarea id="cv-text" rows="4" maxlength="50000" placeholder="Or paste the CV text"></textarea>
+          </div>
+
+          <p class="error" id="setup-error" role="alert" hidden></p>
+          <div class="actions">
+            <button type="submit" class="btn primary" id="create-btn">Create interview and link</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Link for the candidate -->
+    <section id="view-link" class="view" hidden>
+      <div class="card">
+        <h2>Interview link</h2>
+        <p class="subtle" id="link-candidate"></p>
+        <label class="field">
+          <span>Link to send the candidate</span>
+          <input id="link-url" readonly />
+        </label>
+        <p class="notice info" id="link-expiry"></p>
+        <div class="actions">
+          <button class="btn primary" id="copy-link-btn">Copy link</button>
+          <button class="btn ghost" id="copy-invite-btn">Copy invitation text</button>
+          <button class="btn ghost" id="regenerate-link-btn">Regenerate link</button>
+          <button class="btn ghost" id="open-session-btn">Open interview</button>
+        </div>
+        <p class="error" id="link-error" role="alert" hidden></p>
+      </div>
+    </section>
+
+    <!-- Review queue -->
+    <section id="view-queue" class="view" hidden>
+      <div class="card">
+        <div class="queue-head">
+          <div>
+            <h2>Review queue</h2>
+            <p class="subtle">Scored interviews waiting for a human decision.</p>
+          </div>
+          <button class="btn ghost" id="queue-refresh">Refresh</button>
+        </div>
+        <p class="error" id="queue-error" role="alert" hidden></p>
+        <div id="queue-list" class="queue-list"></div>
+        <p class="subtle" id="queue-empty" hidden>Nothing is waiting for review.</p>
+      </div>
+    </section>
+
+    <!-- Interview detail: scores, review, report -->
+    <section id="view-results" class="view" hidden>
+      <div class="card">
+        <div class="results-head">
+          <div>
+            <p class="eyebrow">Interview</p>
+            <h2 id="res-title">Results</h2>
+            <p class="mono subtle" id="res-session"></p>
+          </div>
+          <span class="status" id="res-status"></span>
+        </div>
+
+        <div class="notice info" id="res-scoring-note" hidden></div>
+        <div class="actions">
+          <button class="btn ghost" id="rescore-btn" hidden>Retry scoring</button>
+        </div>
+
+        <div id="res-scores-block" hidden>
+          <div class="rec-row">
+            <div>
+              <p class="eyebrow">AI recommendation</p>
+              <div class="rec-level" id="res-rec-level"></div>
+              <p class="subtle" id="res-rec-meta"></p>
+            </div>
+            <div class="overall">
+              <div class="overall-score" id="res-overall"></div>
+              <div class="subtle">weighted score / 100</div>
+            </div>
+          </div>
+          <p id="res-rec-reasoning" class="rec-reasoning"></p>
+          <h3>Dimensions</h3>
+          <div id="res-dimensions" class="dimensions"></div>
+        </div>
+
+        <div class="notice" id="security-block" hidden>
+          <strong>Possible prompt injection detected</strong>
+          <p id="security-summary"></p>
+          <ul class="plain" id="security-list"></ul>
+        </div>
+
+        <div id="review-block" hidden>
+          <h3>Human review</h3>
+          <div id="review-outcome" class="notice info" hidden></div>
+
+          <div id="review-forms">
+            <label class="field">
+              <span>Reviewer ID</span>
+              <input id="reviewer-id" maxlength="100" placeholder="Your name or staff ID" />
+            </label>
+            <div class="review-grid">
+              <form id="approve-form" class="review-card" novalidate>
+                <h4>Approve AI recommendation</h4>
+                <p class="subtle">Accept the recommendation as it is.</p>
+                <label class="field">
+                  <span>Notes (optional)</span>
+                  <textarea id="approve-notes" rows="2" maxlength="1000"></textarea>
+                </label>
+                <p class="error" id="approve-error" role="alert" hidden></p>
+                <button type="submit" class="btn primary">Approve</button>
+              </form>
+              <form id="override-form" class="review-card" novalidate>
+                <h4>Override recommendation</h4>
+                <p class="subtle">Change the outcome. A written reason is required.</p>
+                <label class="field">
+                  <span>New recommendation</span>
+                  <select id="override-level">
+                    <option value="strong_hire">Strong hire</option>
+                    <option value="hire">Hire</option>
+                    <option value="hold">Hold</option>
+                    <option value="no_hire">No hire</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Reason</span>
+                  <textarea id="override-reason" rows="3" maxlength="2000" placeholder="Explain why the AI recommendation should change"></textarea>
+                </label>
+                <p class="error" id="override-error" role="alert" hidden></p>
+                <button type="submit" class="btn ghost">Override</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="report-block" hidden>
+          <h3>Report</h3>
+          <p class="subtle" id="report-meta"></p>
+          <div class="notice" id="report-warning" hidden></div>
+          <div id="report-body"></div>
+          <div class="actions report-actions">
+            <button class="btn primary" id="report-generate-btn">Generate report</button>
+            <a class="btn ghost" id="report-pdf" href="#" hidden>Download PDF</a>
+            <a class="btn ghost" id="report-md" href="#" hidden>Download Markdown</a>
+            <a class="btn ghost" id="report-json" href="#" hidden>Download JSON</a>
+          </div>
+          <p class="error" id="report-error" role="alert" hidden></p>
+        </div>
+
+        <h3>Transcript</h3>
+        <ol class="transcript" id="res-transcript"></ol>
+
+        <h3>Audit trail</h3>
+        <ul class="audit" id="res-audit"></ul>
+      </div>
+      <div class="actions">
+        <button class="btn ghost" id="back-list-btn">Back to interviews</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="/admin.js"></script>
+</body>
+</html>

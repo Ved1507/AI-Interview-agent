@@ -1,0 +1,98 @@
+{
+  "job_id": "job_008_machine_learning_engineer",
+  "version": "1.0",
+  "created_at": "2026-10-11T09:00:00Z",
+  "updated_at": "2026-10-11T09:00:00Z",
+  "questions": [
+    {
+      "id": "q_008_001",
+      "text": "Walk me through how you took a model from a notebook to a production service. What did you change along the way?",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "How did you package the model, and how did you test the serving code?" },
+        { "trigger": "incomplete", "text": "How did you confirm the production model matched the offline results?" }
+      ],
+      "scoring_rubric": {
+        "1": "Cannot describe moving a model to production",
+        "2": "Describes deployment without changes for production",
+        "3": "Refactors code, versions the model and tests serving",
+        "4": "Checks parity between offline and online behaviour and plans rollback",
+        "5": "Also explains latency, cost trade-offs and the release process for models"
+      }
+    },
+    {
+      "id": "q_008_002",
+      "text": "How do you detect that a production model has degraded, and what do you do when it has?",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "Which signals do you monitor, such as inputs, predictions or outcomes?" },
+        { "trigger": "incomplete", "text": "How do you decide between retraining and rolling back?" }
+      ],
+      "scoring_rubric": {
+        "1": "No monitoring approach",
+        "2": "Monitors system health only, not model quality",
+        "3": "Tracks input drift and prediction distributions",
+        "4": "Uses outcome metrics with alert thresholds and a response plan",
+        "5": "Also explains feedback loops, labelling delays and governance of retraining"
+      }
+    },
+    {
+      "id": "q_008_003",
+      "text": "How do you make a training pipeline reproducible, so that another engineer can rerun last quarter's model?",
+      "skill_area": ["technical_skills", "domain_understanding"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "What exactly do you record for each training run?" },
+        { "trigger": "incomplete", "text": "How do you handle data that changes after training?" }
+      ],
+      "scoring_rubric": {
+        "1": "No reproducibility approach",
+        "2": "Saves the code but not data, parameters or environment",
+        "3": "Tracks code version, parameters and dataset version",
+        "4": "Pins environments and records metrics and artefacts for every run",
+        "5": "Also explains data snapshots, lineage and automated re-runs"
+      }
+    },
+    {
+      "id": "q_008_004",
+      "text": "A model's latency doubled after a release. How would you investigate?",
+      "skill_area": ["problem_solving", "technical_skills"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "Where in the serving path would you measure first?" },
+        { "trigger": "incomplete", "text": "How would you reduce latency without changing predictions?" }
+      ],
+      "scoring_rubric": {
+        "1": "No investigation approach",
+        "2": "Guesses the model is the cause without evidence",
+        "3": "Profiles the serving path to find the slow step",
+        "4": "Separates model, feature and infrastructure causes and fixes the right one",
+        "5": "Also proves predictions are unchanged after the fix and adds a latency budget"
+      }
+    },
+    {
+      "id": "q_008_005",
+      "text": "How do you decide whether a more complex model is worth its extra cost in production?",
+      "skill_area": ["domain_understanding", "communication"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "What baseline do you compare against, and why?" },
+        { "trigger": "incomplete", "text": "How do you explain the trade-off to a non-technical stakeholder?" }
+      ],
+      "scoring_rubric": {
+        "1": "Chooses models by default without comparison",
+        "2": "Compares accuracy only",
+        "3": "Compares against a simple baseline on business metrics and cost",
+        "4": "Considers latency, maintenance and risk alongside accuracy",
+        "5": "Also plans a staged rollout and a clear decision record for stakeholders"
+      }
+    }
+  ]
+}

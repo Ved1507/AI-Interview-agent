@@ -1,0 +1,92 @@
+{
+  "job_id": "job_003_data_scientist",
+  "version": "1.0",
+  "created_at": "2026-10-09T10:00:00Z",
+  "updated_at": "2026-10-09T10:00:00Z",
+  "questions": [
+    {
+      "id": "q_003_001",
+      "text": "Describe a machine learning model you've built from scratch. Walk me through your approach from problem definition to deployment.",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "vague",
+          "text": "Can you be more specific about the problem you were solving and the data involved?"
+        },
+        {
+          "trigger": "incomplete",
+          "text": "How did you evaluate your model and handle overfitting/underfitting?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "Cannot describe a relevant ML project",
+        "2": "Describes a project but with significant gaps in approach",
+        "3": "Describes a project with reasonable ML engineering practices",
+        "4": "Demonstrates strong understanding of ML pipeline",
+        "5": "Exceptional understanding with sophisticated ML engineering"
+      }
+    },
+    {
+      "id": "q_003_002",
+      "text": "How do you approach feature engineering? Can you give an example of how you created features for a past project?",
+      "skill_area": ["technical_skills", "domain_understanding"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "vague",
+          "text": "Can you describe the specific features you created and why they were important?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "Limited understanding of feature engineering",
+        "2": "Basic knowledge but missing depth",
+        "3": "Good understanding of feature engineering principles",
+        "4": "Strong feature engineering with domain knowledge",
+        "5": "Expert understanding with sophisticated feature creation"
+      }
+    },
+    {
+      "id": "q_003_003",
+      "text": "Tell me about your experience with data analysis and exploratory data analysis (EDA). What's your typical EDA process?",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "incomplete",
+          "text": "How do you handle missing values and outliers in your EDA?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "Limited EDA experience",
+        "2": "Basic EDA knowledge but missing systematic approach",
+        "3": "Good EDA process with visualization",
+        "4": "Comprehensive EDA with statistical analysis",
+        "5": "Expert EDA with sophisticated analysis techniques"
+      }
+    },
+    {
+      "id": "q_003_004",
+      "text": "How do you approach communicating your findings and results to non-technical stakeholders?",
+      "skill_area": ["communication"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "vague",
+          "text": "Can you give a specific example of a complex finding you had to communicate?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "Limited communication skills",
+        "2": "Basic ability but often too technical",
+        "3": "Good ability to simplify complex concepts",
+        "4": "Strong communication with appropriate context",
+        "5": "Exceptional ability to translate technical findings"
+      }
+    }
+  ]
+}

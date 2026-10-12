@@ -1,0 +1,98 @@
+{
+  "job_id": "job_010_cloud_architect",
+  "version": "1.0",
+  "created_at": "2026-10-11T09:00:00Z",
+  "updated_at": "2026-10-11T09:00:00Z",
+  "questions": [
+    {
+      "id": "q_010_001",
+      "text": "Walk me through how you designed a cloud architecture for a new product. What trade-offs did you record?",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "Which services did you choose, and what did you reject?" },
+        { "trigger": "incomplete", "text": "How did you plan for growth and for failure?" }
+      ],
+      "scoring_rubric": {
+        "1": "No architecture described",
+        "2": "Lists services without the reasons",
+        "3": "Explains the main components and the key trade-offs",
+        "4": "Covers scaling, failure domains and cost in the design",
+        "5": "Also shows how the design was reviewed, decided and written down for others"
+      }
+    },
+    {
+      "id": "q_010_002",
+      "text": "How would you plan the migration of a large legacy system to the cloud with minimal business risk?",
+      "skill_area": ["problem_solving", "communication"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "How would you decide which parts to move first?" },
+        { "trigger": "incomplete", "text": "How would you prove the migrated system behaves the same?" }
+      ],
+      "scoring_rubric": {
+        "1": "No migration approach",
+        "2": "Proposes a lift-and-shift without assessing dependencies",
+        "3": "Sequences workloads by dependency and risk with a fallback plan",
+        "4": "Uses phased cut-overs, parallel running and clear success criteria",
+        "5": "Also plans for skills, change management and benefits tracking"
+      }
+    },
+    {
+      "id": "q_010_003",
+      "text": "How do you keep cloud costs under control as several teams deploy independently?",
+      "skill_area": ["domain_understanding", "problem_solving"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "What tools or reports do teams use to see their own spending?" },
+        { "trigger": "incomplete", "text": "How do you balance cost against reliability decisions?" }
+      ],
+      "scoring_rubric": {
+        "1": "No cost awareness",
+        "2": "Reacts to bills after they arrive",
+        "3": "Uses tagging, budgets and regular reviews",
+        "4": "Gives teams cost ownership and reviews design choices for cost",
+        "5": "Also links unit costs to business metrics and plans capacity ahead of demand"
+      }
+    },
+    {
+      "id": "q_010_004",
+      "text": "How do you design network segmentation and access between environments, such as production and development?",
+      "skill_area": ["technical_skills", "domain_understanding"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "How would you stop development traffic reaching production data?" },
+        { "trigger": "incomplete", "text": "How do you give engineers access when they need to debug production?" }
+      ],
+      "scoring_rubric": {
+        "1": "No segmentation approach",
+        "2": "Uses one flat network for everything",
+        "3": "Separates environments with controlled routes and access",
+        "4": "Uses least-privilege access and audited break-glass procedures",
+        "5": "Also automates network policy and tests it continuously"
+      }
+    },
+    {
+      "id": "q_010_005",
+      "text": "Describe how you would guide a team that wants to adopt a new cloud service the organisation has not used before.",
+      "skill_area": ["communication", "domain_understanding"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "What would you check before the team starts building?" },
+        { "trigger": "incomplete", "text": "How do you stop the new service becoming a one-team exception?" }
+      ],
+      "scoring_rubric": {
+        "1": "No guidance approach",
+        "2": "Approves or rejects without explaining",
+        "3": "Reviews security, cost and support needs before adoption",
+        "4": "Provides a reference pattern and a review path other teams can reuse",
+        "5": "Also builds a decision record, training and an ongoing owner for the service"
+      }
+    }
+  ]
+}

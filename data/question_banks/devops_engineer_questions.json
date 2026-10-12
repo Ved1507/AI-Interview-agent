@@ -1,0 +1,98 @@
+{
+  "job_id": "job_004_devops_engineer",
+  "version": "1.0",
+  "created_at": "2026-10-11T09:00:00Z",
+  "updated_at": "2026-10-11T09:00:00Z",
+  "questions": [
+    {
+      "id": "q_004_001",
+      "text": "Walk me through how you designed a CI/CD pipeline for a service you own. What stages did it have, and how did you keep deployments safe?",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "Which tools did you use for each stage, and why did you choose them?" },
+        { "trigger": "incomplete", "text": "How did you handle a failed deployment or a rollback?" }
+      ],
+      "scoring_rubric": {
+        "1": "No clear pipeline described",
+        "2": "Lists tools without explaining the flow or safety checks",
+        "3": "Describes build, test and deploy stages with some safety measures",
+        "4": "Covers staged rollout, automated tests and rollback clearly",
+        "5": "Explains trade-offs, progressive delivery and how the design evolved"
+      }
+    },
+    {
+      "id": "q_004_002",
+      "text": "Tell me about a time a Kubernetes workload failed in production. How did you find the cause and fix it?",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "What did the logs, metrics or events show you at each step?" },
+        { "trigger": "incomplete", "text": "How did you prevent the same failure from happening again?" }
+      ],
+      "scoring_rubric": {
+        "1": "Cannot describe a failure or its cause",
+        "2": "Describes the failure but not the investigation",
+        "3": "Explains a sensible investigation using logs or events and a fix",
+        "4": "Shows systematic diagnosis and a preventive change",
+        "5": "Explains root cause analysis, prevention and shared learning with the team"
+      }
+    },
+    {
+      "id": "q_004_003",
+      "text": "How do you manage infrastructure changes safely when several teams depend on the same cloud resources?",
+      "skill_area": ["domain_understanding", "problem_solving"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "What does your review or approval process look like in practice?" },
+        { "trigger": "incomplete", "text": "How do you know a change will not break another team?" }
+      ],
+      "scoring_rubric": {
+        "1": "No awareness of shared-resource risk",
+        "2": "Mentions reviews but no concrete safeguards",
+        "3": "Uses infrastructure as code, plans and reviews",
+        "4": "Adds state locking, staged environments and clear ownership",
+        "5": "Explains policy guardrails, blast-radius limits and cross-team communication"
+      }
+    },
+    {
+      "id": "q_004_004",
+      "text": "Describe how you set up monitoring and alerting for a service. How did you decide what should page someone?",
+      "skill_area": ["technical_skills", "communication"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "Which metrics did you watch, and what thresholds did you choose?" },
+        { "trigger": "incomplete", "text": "How did you deal with alerts that fired too often?" }
+      ],
+      "scoring_rubric": {
+        "1": "No monitoring approach described",
+        "2": "Lists metrics without criteria for alerting",
+        "3": "Uses symptom-based alerts with some tuning",
+        "4": "Ties alerts to user impact and reduces noise deliberately",
+        "5": "Explains SLOs, error budgets and a clear paging policy"
+      }
+    },
+    {
+      "id": "q_004_005",
+      "text": "What would you check first if a deployment succeeded but users reported slow responses an hour later?",
+      "skill_area": ["problem_solving", "communication"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "What would you look at in the first five minutes, and why?" },
+        { "trigger": "incomplete", "text": "How would you tell the affected teams what is happening?" }
+      ],
+      "scoring_rubric": {
+        "1": "No structured approach",
+        "2": "Guesses without checking evidence",
+        "3": "Checks recent changes, dashboards and logs in a sensible order",
+        "4": "Narrows the scope methodically and communicates status clearly",
+        "5": "Also explains rollback decisions, customer impact and a follow-up review"
+      }
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "job_id": "job_002_frontend_engineer",
+  "version": "1.0",
+  "created_at": "2026-10-09T10:00:00Z",
+  "updated_at": "2026-10-09T10:00:00Z",
+  "questions": [
+    {
+      "id": "q_002_001",
+      "text": "Describe a complex UI component you've built. How did you approach state management and performance optimization?",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "vague",
+          "text": "Can you be more specific about the component structure and the libraries you used?"
+        },
+        {
+          "trigger": "incomplete",
+          "text": "How did you handle re-renders and what optimization techniques did you apply?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "Cannot describe a relevant component or lacks understanding of state management",
+        "2": "Describes a component but with significant gaps in approach",
+        "3": "Describes a moderately complex component with reasonable solutions",
+        "4": "Demonstrates strong understanding of state management and performance",
+        "5": "Exceptional understanding with sophisticated optimization strategies"
+      }
+    },
+    {
+      "id": "q_002_002",
+      "text": "How do you approach responsive design and testing across different screen sizes?",
+      "skill_area": ["technical_skills", "domain_understanding"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "vague",
+          "text": "What specific tools or approaches do you use for responsive testing?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "Limited understanding of responsive design",
+        "2": "Basic knowledge of media queries but missing broader context",
+        "3": "Good understanding of responsive design with testing approach",
+        "4": "Comprehensive approach including mobile-first design and testing",
+        "5": "Expert understanding with sophisticated responsive design patterns"
+      }
+    },
+    {
+      "id": "q_002_003",
+      "text": "Tell me about your experience with testing frontend code. What testing frameworks and strategies have you used?",
+      "skill_area": ["technical_skills", "domain_understanding"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "incomplete",
+          "text": "What's your approach to testing user interactions and edge cases?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "Limited or no testing experience",
+        "2": "Basic testing knowledge but incomplete coverage",
+        "3": "Good understanding of unit and integration testing",
+        "4": "Comprehensive testing approach including E2E tests",
+        "5": "Expert understanding with sophisticated testing strategies"
+      }
+    },
+    {
+      "id": "q_002_004",
+      "text": "How do you approach debugging performance issues in a frontend application?",
+      "skill_area": ["problem_solving", "technical_skills"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "vague",
+          "text": "What specific tools do you use to identify and measure performance problems?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "Limited debugging approach",
+        "2": "Basic debugging but missing systematic methodology",
+        "3": "Systematic debugging approach with browser tools",
+        "4": "Comprehensive debugging with performance monitoring",
+        "5": "Expert debugging with advanced profiling techniques"
+      }
+    }
+  ]
+}

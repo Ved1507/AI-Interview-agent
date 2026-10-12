@@ -1,0 +1,98 @@
+{
+  "job_id": "job_007_security_engineer",
+  "version": "1.0",
+  "created_at": "2026-10-11T09:00:00Z",
+  "updated_at": "2026-10-11T09:00:00Z",
+  "questions": [
+    {
+      "id": "q_007_001",
+      "text": "How do you run a threat model for a new feature? Walk me through a recent example.",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "Which threats did you identify, and which did you rank as most serious?" },
+        { "trigger": "incomplete", "text": "How did the threat model change the design or the release?" }
+      ],
+      "scoring_rubric": {
+        "1": "No threat modelling approach",
+        "2": "Lists generic threats without the feature context",
+        "3": "Maps data flows and trust boundaries for the feature",
+        "4": "Ranks risks and agrees mitigations with the team",
+        "5": "Also tracks mitigations to completion and updates the model as the design evolves"
+      }
+    },
+    {
+      "id": "q_007_002",
+      "text": "How would you review cloud IAM permissions for a team that has grown by accident over several years?",
+      "skill_area": ["technical_skills", "domain_understanding"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "How would you find which permissions are actually used?" },
+        { "trigger": "incomplete", "text": "How do you remove access without breaking production?" }
+      ],
+      "scoring_rubric": {
+        "1": "No approach to access review",
+        "2": "Suggests removing permissions without evidence",
+        "3": "Uses usage data and least-privilege principles",
+        "4": "Plans a phased reduction with owners and rollback",
+        "5": "Also automates reviews and sets guardrails for new access"
+      }
+    },
+    {
+      "id": "q_007_003",
+      "text": "Describe how you would handle a suspected data leak discovered on a Friday evening.",
+      "skill_area": ["problem_solving", "communication"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "What would you do in the first hour, and what would you avoid doing?" },
+        { "trigger": "incomplete", "text": "Who needs to be told, and in what order?" }
+      ],
+      "scoring_rubric": {
+        "1": "No incident response approach",
+        "2": "Reacts without containment or evidence preservation",
+        "3": "Contains the issue, preserves evidence and escalates",
+        "4": "Coordinates legal, communications and engineering with clear roles",
+        "5": "Also runs a blameless review and turns findings into lasting controls"
+      }
+    },
+    {
+      "id": "q_007_004",
+      "text": "How do you help a development team fix a security finding without slowing their delivery?",
+      "skill_area": ["communication", "problem_solving"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "How do you decide which findings must be fixed before release?" },
+        { "trigger": "incomplete", "text": "What do you do when a team disagrees about the risk?" }
+      ],
+      "scoring_rubric": {
+        "1": "Sees security as a blocker only",
+        "2": "Reports findings without help to fix them",
+        "3": "Prioritises by risk and explains fixes clearly",
+        "4": "Offers secure defaults and reusable fixes to reduce future work",
+        "5": "Also builds shared tooling and training, and records risk decisions openly"
+      }
+    },
+    {
+      "id": "q_007_005",
+      "text": "What controls do you put in place to protect secrets used by applications and build pipelines?",
+      "skill_area": ["technical_skills", "domain_understanding"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "Where are the secrets stored, and who can read them?" },
+        { "trigger": "incomplete", "text": "How do you rotate secrets without downtime?" }
+      ],
+      "scoring_rubric": {
+        "1": "No secrets management described",
+        "2": "Mentions a vault without access controls",
+        "3": "Uses a managed store, least-privilege access and scanning for leaks",
+        "4": "Adds rotation, short-lived credentials and audit logging",
+        "5": "Also covers supply-chain controls and recovery when a secret is exposed"
+      }
+    }
+  ]
+}

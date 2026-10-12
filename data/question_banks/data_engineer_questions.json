@@ -1,0 +1,98 @@
+{
+  "job_id": "job_009_data_engineer",
+  "version": "1.0",
+  "created_at": "2026-10-11T09:00:00Z",
+  "updated_at": "2026-10-11T09:00:00Z",
+  "questions": [
+    {
+      "id": "q_009_001",
+      "text": "Describe a data pipeline you built or maintained. How did you make sure it loaded the right data every time?",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "How did the pipeline handle late or duplicate records?" },
+        { "trigger": "incomplete", "text": "How did you know when something went wrong?" }
+      ],
+      "scoring_rubric": {
+        "1": "Cannot describe a pipeline",
+        "2": "Describes loading steps without correctness checks",
+        "3": "Uses idempotent loads, retries and basic checks",
+        "4": "Handles late and duplicate data and alerts on failures",
+        "5": "Also explains backfills, data contracts and recovery procedures"
+      }
+    },
+    {
+      "id": "q_009_002",
+      "text": "How do you model data in a warehouse so that analysts can answer new questions without rebuilding everything?",
+      "skill_area": ["domain_understanding", "technical_skills"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "What is the difference between your fact and dimension tables in practice?" },
+        { "trigger": "incomplete", "text": "How do you handle a field whose definition changes over time?" }
+      ],
+      "scoring_rubric": {
+        "1": "No modelling approach",
+        "2": "Stores raw data only, with no structure",
+        "3": "Uses a clear star or layered model with documentation",
+        "4": "Handles slowly changing dimensions and naming conventions",
+        "5": "Also designs for governance, reuse and a clear data ownership model"
+      }
+    },
+    {
+      "id": "q_009_003",
+      "text": "A business dashboard shows numbers that do not match the finance report. How do you find out why?",
+      "skill_area": ["problem_solving", "communication"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "Which step of the pipeline would you check first, and how?" },
+        { "trigger": "incomplete", "text": "How do you agree the correct number with the finance team?" }
+      ],
+      "scoring_rubric": {
+        "1": "No structured approach",
+        "2": "Compares totals without tracing the cause",
+        "3": "Traces the numbers back through each transformation step",
+        "4": "Finds the definition or filter difference and documents it",
+        "5": "Also adds reconciliation tests to prevent the same gap returning"
+      }
+    },
+    {
+      "id": "q_009_004",
+      "text": "How do you test data quality in a pipeline? Give an example of a check that caught a real problem.",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "Which tests are automatic, and which need a person to look?" },
+        { "trigger": "incomplete", "text": "What happens in the pipeline when a check fails?" }
+      ],
+      "scoring_rubric": {
+        "1": "No data quality checks",
+        "2": "Checks row counts only",
+        "3": "Uses null, range and uniqueness checks with alerts",
+        "4": "Adds freshness checks and blocks bad data from publishing",
+        "5": "Also tracks quality trends and assigns owners to each check"
+      }
+    },
+    {
+      "id": "q_009_005",
+      "text": "When would you choose batch processing over streaming, and how would you explain that choice to a product team?",
+      "skill_area": ["domain_understanding", "communication"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        { "trigger": "vague", "text": "What latency does the product team actually need?" },
+        { "trigger": "incomplete", "text": "What does streaming cost in operations compared with batch?" }
+      ],
+      "scoring_rubric": {
+        "1": "No view on the trade-off",
+        "2": "Prefers one approach without reasons",
+        "3": "Matches latency needs and operating cost to the choice",
+        "4": "Explains failure handling and complexity differences clearly",
+        "5": "Also proposes a phased path and measures whether the choice met the need"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# Runtime data (generated storage backups, not source)
+data/storage/
+
+# Logs and coverage
+*.log
+coverage/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

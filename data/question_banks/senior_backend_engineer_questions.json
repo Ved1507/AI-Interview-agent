@@ -1,0 +1,192 @@
+{
+  "job_id": "job_001_senior_backend_engineer",
+  "version": "1.0",
+  "created_at": "2026-10-01T10:00:00Z",
+  "updated_at": "2026-10-09T10:00:00Z",
+  "questions": [
+    {
+      "id": "q_001_001",
+      "text": "Tell me about a time you designed a system to handle millions of concurrent users. What were the key challenges and how did you address them?",
+      "skill_area": ["technical_skills", "problem_solving"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "vague",
+          "text": "Can you be more specific about the scale? How many requests per second were we handling?"
+        },
+        {
+          "trigger": "incomplete",
+          "text": "What specific technologies or patterns did you use to ensure consistency and reliability?"
+        },
+        {
+          "trigger": "contradicting",
+          "text": "Earlier you mentioned [X], but just now you said [Y]. Can you clarify?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "Cannot describe a relevant system or lacks understanding of scalability challenges",
+        "2": "Describes a system but with significant gaps in approach or limited scale experience",
+        "3": "Describes a moderately complex system with reasonable architectural decisions",
+        "4": "Demonstrates strong understanding of distributed systems, clear trade-offs, thoughtful design",
+        "5": "Exceptional system design with sophisticated solutions to scalability, demonstrates deep expertise"
+      }
+    },
+    {
+      "id": "q_001_002",
+      "text": "Describe your approach to optimizing database performance when facing slow queries. Walk me through your methodology.",
+      "skill_area": ["technical_skills", "domain_understanding"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "vague",
+          "text": "What specific tools or metrics do you use to identify slow queries?"
+        },
+        {
+          "trigger": "incomplete",
+          "text": "Beyond indexing, what other optimization techniques have you used?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "Lacks systematic approach to query optimization",
+        "2": "Knows basic techniques (indexing) but missing broader context",
+        "3": "Solid understanding of query analysis, indexing, and some advanced techniques",
+        "4": "Comprehensive approach including monitoring, analysis, schema design, and trade-offs",
+        "5": "Expert understanding with sophisticated techniques and deep performance insight"
+      }
+    },
+    {
+      "id": "q_001_003",
+      "text": "How do you approach designing an API that will be used by multiple teams? What considerations are most important?",
+      "skill_area": ["technical_skills", "communication", "problem_solving"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "vague",
+          "text": "What do you mean by 'clean' or 'intuitive'? Can you give concrete examples?"
+        },
+        {
+          "trigger": "incomplete",
+          "text": "How do you handle versioning and backwards compatibility?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "Superficial understanding of API design principles",
+        "2": "Basic understanding but misses important considerations like versioning or error handling",
+        "3": "Good understanding of REST principles, error handling, documentation",
+        "4": "Thoughtful design considering multiple stakeholder needs, versioning strategy, SDK support",
+        "5": "Expert approach with deep consideration of usability, evolution, and ecosystem impact"
+      }
+    },
+    {
+      "id": "q_001_004",
+      "text": "Tell me about a time you had to debug a production issue that was difficult to reproduce. How did you approach it?",
+      "skill_area": ["problem_solving", "communication"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "incomplete",
+          "text": "What monitoring or logging improvements did you make afterward?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "Vague or reactive approach without systematic methodology",
+        "2": "Basic troubleshooting but missing systematic approach or learning",
+        "3": "Systematic debugging approach with some improvements for future",
+        "4": "Methodical approach, good use of monitoring/logging, clear learnings applied",
+        "5": "Excellent incident response with sophisticated investigation and system improvements"
+      }
+    },
+    {
+      "id": "q_001_005",
+      "text": "How do you balance technical debt against new feature development? Can you walk through a specific decision you made?",
+      "skill_area": ["problem_solving", "domain_understanding"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "vague",
+          "text": "What frameworks or processes do you use to evaluate technical debt?"
+        },
+        {
+          "trigger": "incomplete",
+          "text": "How did you communicate and get buy-in for addressing technical debt?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "No systematic approach; either ignores debt or stalls on features",
+        "2": "Aware of debt but lacks framework for decisions",
+        "3": "Reasonable approach with consideration of both factors",
+        "4": "Thoughtful framework considering business impact and engineering health",
+        "5": "Sophisticated approach with clear metrics, communication, and strategic vision"
+      }
+    },
+    {
+      "id": "q_001_006",
+      "text": "How do you approach hiring and mentoring junior engineers? What's your philosophy?",
+      "skill_area": ["communication"],
+      "difficulty": "senior",
+      "mode": ["A", "B"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "vague",
+          "text": "Can you share a concrete example of how you've mentored someone?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "No clear philosophy or limited mentoring experience",
+        "2": "Some mentoring experience but inconsistent approach",
+        "3": "Clear philosophy with practical examples",
+        "4": "Thoughtful approach to mentoring with measurable impact",
+        "5": "Exceptional mentor with demonstrated growth of team members"
+      }
+    },
+    {
+      "id": "q_001_007",
+      "text": "Describe the tradeoffs between different architectural patterns (monolith vs microservices vs serverless). When would you choose each?",
+      "skill_area": ["technical_skills", "problem_solving", "domain_understanding"],
+      "difficulty": "senior",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "incomplete",
+          "text": "What about operational complexity and team size considerations?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "Superficial or biased understanding; overgeneralizes",
+        "2": "Basic understanding but misses important tradeoffs",
+        "3": "Good understanding of main tradeoffs with reasonable guidance",
+        "4": "Nuanced understanding with clear consideration of multiple factors",
+        "5": "Expert understanding with sophisticated analysis of business, technical, and organizational factors"
+      }
+    },
+    {
+      "id": "q_001_008",
+      "text": "Walk me through how you would approach building a feature from initial discussion to production deployment.",
+      "skill_area": ["problem_solving", "communication"],
+      "difficulty": "mid",
+      "mode": ["A", "B", "C"],
+      "follow_up_suggestions": [
+        {
+          "trigger": "vague",
+          "text": "How do you handle uncertainty or unknown requirements?"
+        },
+        {
+          "trigger": "incomplete",
+          "text": "What about testing strategy and rollout approach?"
+        }
+      ],
+      "scoring_rubric": {
+        "1": "Ad-hoc or incomplete process",
+        "2": "Basic process but missing important steps",
+        "3": "Reasonable process with most key steps covered",
+        "4": "Well-thought-out process with clear phases and risk mitigation",
+        "5": "Sophisticated process balancing speed, quality, and risk management"
+      }
+    }
+  ]
+}
